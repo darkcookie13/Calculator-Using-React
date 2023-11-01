@@ -1,0 +1,93 @@
+/* This is the styling of the calculator. */
+
+/* Import a font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,800;1,700&display=swap");
+
+/* Apply styling to all elements and pseudo-elements with the chosen font and font size */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Playfair Display", serif;
+  font-size: 13px;
+}
+
+/* Style the overall appearance of the page */
+body {
+  margin: 0;
+  background: linear-gradient(
+    to left,
+    #b5b216,
+    #cc20c9
+  ); /* Create a linear gradient background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Center the content vertically */
+}
+
+/* Style the calculator grid */
+.calculator-grid {
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: repeat(4, 6rem); /* Define a 4-column grid */
+  grid-template-rows: minmax(7rem, auto) repeat(5, 6rem); /* Define the rows with auto sizing and 5 rows with 6rem height */
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 1rem;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+/* Style the calculator buttons */
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 27px;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: black;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+/* Button hover and focus effects */
+.calculator-grid > button:hover,
+.calculator-grid > button:focus {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Style for buttons spanning two columns */
+.span-two {
+  grid-column: span 2;
+}
+
+/* Style for the calculator output display */
+.output {
+  grid-column: 1/-1; /* Span all columns */
+  background-color: rgb(184 142 142 / 75%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 0.75rem;
+  word-wrap: break-word;
+  word-break: break-all;
+  border-radius: 5px;
+}
+
+/* Style for the previous operand display within the output */
+.output .previous-operand {
+  color: rgba(6, 253, 213, 75%);
+  font-size: 1.5rem;
+}
+
+/* Style for the current operand display within the output */
+.output .current-operand {
+  color: #0060ff;
+  font-size: 2rem;
+}
